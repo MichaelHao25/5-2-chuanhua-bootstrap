@@ -1,0 +1,260 @@
+﻿.style2
+	.slogan
+		.title
+			background-image url('../img/7f58993b3daab74ada6e157c150b6522-627+72.png')
+		.content
+			.green
+			.num
+				font-size 24px
+				line-height 1
+				font-weight bold
+			.num
+				color #ff5918
+			.green
+				color #7ebf03
+
+.dont-warning-stage
+	.why
+		.content
+			.tips
+				display none
+			.steps
+				padding-bottom 0
+	.love
+		.content
+			.item
+				padding-top 20px
+				&.green
+					h3
+						color #6db600
+						&:after
+							background #6db600
+							border-color #c3de9b
+					.text
+						background #6db600
+				&.red
+					h3
+						color #ff500c
+						text-align right
+						&:after
+							left auto
+							right 0
+							background #ff500c
+							border-color #f9b9a0 
+					.text
+						background #ff500c
+				&.blue
+					h3
+						color #3598db	
+						&:after
+							background #3598db	
+							border-color #afd3ec 
+					.text
+						background #3598db	
+				
+				h3
+					position relative
+					padding 0 40px
+					font-size 30px
+					line-height 70px
+					&:after
+						content ''
+						position absolute
+						top 50%
+						margin-top -12px
+						left 0
+						width 8px
+						height 8px
+						border 8px solid #000
+						border-radius 50%
+						box-sizing content-box
+				p
+					padding 10px 15px
+					width 100%
+					max-width 700px
+					margin 0 auto
+					font-size 16px
+					line-height 30px
+					color #fff
+					text-align center
+					box-sizing border-box
+	.system
+		.pic-wrap
+			img
+				display block
+				width 100%
+		.wid
+			var b = 284px
+			position relative
+			height b + (b / 2) + 10px
+			.item
+				position absolute
+				width b
+				height b
+				padding-top 0
+				left 0
+				top 0
+				transition 0.3s
+				&.bgc9a063
+					&:after
+						border-bottom-color #c9a063
+					&:before
+						border-top-color #c9a063
+				&:after
+					content ""
+					position absolute
+					z-index -1
+					top -(b / 2)
+					left 0
+					border (b / 2) solid transparent
+					border-bottom-color #604c40
+				&:before
+					content ""
+					position absolute
+					z-index -1
+					bottom -(b / 2)
+					left 0
+					border (b / 2) solid transparent
+					border-top-color #604c40
+				h4
+					padding-top 30%
+					font-size 22px
+					color #fff
+					line-height 2
+					text-align center
+				div
+					font-size 14px
+					color #c9a063
+					line-height 2
+					text-align center
+			for attr in 0..7
+				.item{attr+1}
+					left b * (attr % 4) 
+					if attr>3
+						top (b / 2) + 10px	
+						left b * (attr % 4) + (b / 2)
+						div
+							color #604c40
+						&:after
+							border-bottom-color #c9a063
+						&:before
+							border-top-color #c9a063
+		@media(max-width 1200px)
+			.wid
+				b= 235px
+				height b + (b / 2) + 10px
+				.item
+					width b
+					height b
+					&:after
+						top -(b / 2)
+						border (b / 2) solid transparent
+						border-bottom-color #604c40
+					&:before
+						bottom -(b / 2)
+						border (b / 2) solid transparent
+						border-top-color #604c40
+					h4
+						padding-top 22%
+				for attr in 0..7
+					.item{attr+1}
+						left b * (attr % 4) 
+						if attr>3
+							top (b / 2) + 10px	
+							left b * (attr % 4) + (b / 2)
+							&:after
+								top -(b / 2)
+								border (b / 2) solid transparent
+								border-bottom-color #c9a063
+							&:before
+								bottom -(b / 2)
+								border (b / 2) solid transparent
+								border-top-color #c9a063
+		@media(max-width 992px)
+			.wid
+				b= 360px
+				height b*3 + 10px*4
+				.item
+					width b
+					height b
+					&:after
+						top -(b / 2)
+						border (b / 2) solid transparent
+						border-bottom-color #604c40
+					&:before
+						bottom -(b / 2)
+						border (b / 2) solid transparent
+						border-top-color #604c40
+				for attr in 0..7
+					.item{attr+1}
+						left b * (attr % 2) + (b / 2)
+						top 0
+						// left b * (attr % 4) 
+						if attr>0
+							top (b / 2) +  10px	
+							left b * (attr - 1)
+							// &:after
+							// 	top -(b / 2)
+							// 	border (b / 2) solid transparent
+							// 	border-bottom-color #c9a063
+							// &:before
+							// 	bottom -(b / 2)
+							// 	border (b / 2) solid transparent
+							// 	border-top-color #c9a063
+						if attr > 2
+							top (b / 2) * 2  +  10px*2	
+							left b * (attr - 2) - (b / 2)
+						if attr > 3
+							top (b / 2) * 3  +  10px*3	
+							left b * (attr - 4)
+							&:after
+								top -(b / 2)
+								border (b / 2) solid transparent
+								border-bottom-color #c9a063
+							&:before
+								bottom -(b / 2)
+								border (b / 2) solid transparent
+								border-top-color #c9a063
+						if attr > 5
+							top (b / 2) * 4  +  10px*4	
+							left b * (attr - 5) -  (b / 2)
+						// if attr>2
+						// 	top (b / 2 ) * 2 + 10px *2
+						// 	left b * (attr % 2) + (b / 2)
+						// if attr>4
+						// 	top (b / 2 ) * 3 + 10px *3
+						// 	left b * (attr % 2) + (b / 2)
+						// if attr>5
+						// 	top (b / 2 ) * 3 + 10px *3
+						// 	left b * (attr % 2) + (b / 2)
+		@media(max-width 768px)
+			.wid
+				height auto
+				display -webkit-flex
+				display -moz-flex
+				display -ms-flex
+				display -o-flex
+				display flex
+				flex-wrap wrap
+				display none
+				.item
+					position relative
+					top 0
+					left 0
+					margin 0 auto
+					display -webkit-flex
+					display -moz-flex
+					display -ms-flex
+					display -o-flex
+					display flex
+					align-items center
+					justify-content center
+					flex-direction column
+					h4
+						padding-top 0
+			
+				
+@media(max-width 768px)
+	.style2 .news .content .item
+		max-width 360px
+		margin 0 auto

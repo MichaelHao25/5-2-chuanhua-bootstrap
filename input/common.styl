@@ -1,0 +1,1782 @@
+@import url(reset.css);
+
+body{
+	overflow-x hidden
+}
+html
+	@media(max-width 1199px)
+		font-size 18Px
+	@media(max-width 767px)
+		font-size 16Px
+
+.header
+	position fixed
+	top 0
+	left 0
+	right 0
+	header-height = 90px
+	background rgba(255,255,255,0.8)
+	transition 0.3s
+	z-index 2
+	// opacity 0
+	@media(max-width 991px)
+		opacity 1!important
+		position fixed
+	&:hover
+		background rgba(255,255,255,1)
+	.brand
+	.nav
+		height header-height
+		line-height header-height
+		@media(max-width 767px)
+			height 50Px
+			line-height 50Px
+	.brand
+		width 193px
+		background url(../img/hico1.png) center center/193px auto no-repeat
+		@media(max-width 767px)
+			background-position left center
+			background-size auto 70%
+	.nav
+		width calc(100% - 193px)
+		text-align right
+		@media(max-width 991px)
+			position fixed
+			right 0
+			top 0
+			bottom 0
+			height auto
+			width 100%
+			padding-left 40%
+			padding-right 10%
+			background linear-gradient(to right,rgba(0,0,0,0.3) @padding-left - 10%,#fff @padding-left - 10%,#fff 100%)
+			box-sizing border-box
+			z-index 1	
+			transition 0.3s
+			transform translate(100%, 0)
+			opacity 0
+			line-height 70px
+			&.active{
+				transform translate(0, 0)
+				opacity 1
+			}
+		a
+			position relative
+			display inline-block
+			padding 0 10px
+			margin 0 10px
+			transition 0.3s
+			font-size 18px
+			overflow hidden
+			color #333333
+			&:after
+				content ''
+				position absolute
+				bottom 0
+				left 0
+				right 0
+				border-bottom 2px solid #d22828
+				transition 0.3s 
+				transform translateX(-100%)
+			&:hover
+				color #d22828			
+				&:after
+					transform translateX(0%)
+			@media(max-width 991px)
+				display block
+				font-size 16px
+	.mobile-menu-toggle
+		position absolute
+		top 50%
+		right 15Px
+		width 40px
+		height 40px
+		transform translateY(-50%)
+		margin 0
+		padding 0
+		@media(max-width 767px)
+			width 20Px
+			height 20Px
+		.menu-toggle
+			width 100%
+			height 100%
+			span
+				background #333
+				&:after
+					bottom -19px
+					background #333
+					@media(max-width 767px)
+						bottom -9px
+				&:before
+					top -19px
+					background #333
+					@media(max-width 767px)
+						top -9px
+.animate
+	perspective 2Px
+	height 100vh
+	overflow-y auto
+	overflow-x hidden
+	&.none
+		@media(max-width 991px)
+			perspective none
+			height auto
+			.welcome
+				position static
+				bottom auto
+				height 50vh
+				transform scale(1)
+				@media(max-width 570px)
+					height 30vh
+			.wrap
+				position static
+				top 52vh
+
+.banner
+	padding-bottom 0
+	.swiper-slide
+		a
+		img
+			display block
+		img
+			max-width 1920px
+			width 100%
+			margin 0 auto
+	.swiper-pagination
+		span
+			border 1px solid #fff
+			background #555
+			opacity 1
+			&.swiper-pagination-bullet-active
+				background #fff
+	&+.animate
+		perspective 0
+		height auto
+		.wrap
+			position static
+.welcome
+	position absolute
+	top 0
+	left 0
+	bottom 0
+	width 100vw
+	box-sizing border-box
+	padding-bottom 5%
+	transform translateZ(1Px) scale(0.5)
+	background url() center center/cover no-repeat
+	pointer-events none
+	z-index 1
+	display -webkit-flex
+	display -moz-flex
+	display -ms-flex
+	display -o-flex
+	display flex
+	align-items center
+	justify-content flex-end
+	flex-direction column
+	line-height 1.5
+	color #fff
+	text-align center
+	@media(max-width 767px)
+		.container
+			width 100%
+	h2
+		font-size 110px
+		font-weight bold
+		@media(max-width 991px)
+			font-size 80px
+		@media(max-width 570px)
+			font-size 40px
+		span
+			color #de011f
+	h3
+		font-size 100px
+		@media(max-width 991px)
+			font-size 50px
+		@media(max-width 570px)
+			font-size 26px
+	.status
+		margin 0 auto
+		margin-top 15%
+		padding 2% 0
+		display -webkit-flex
+		display -moz-flex
+		display -ms-flex
+		display -o-flex
+		display flex
+		width 100%
+		max-width 950px
+		background rgba(255,255,255,0.9)
+		border-radius 10px
+		@media(max-width 1400px)
+			margin-top 5%
+		@media(max-width 991px)
+			margin-top 3%
+		.item
+			flex 1
+			text-align center
+			&.bd
+				border-left 1px solid #dededf
+				border-right 1px solid #dededf
+			span
+				display block
+				font-size 24px
+				color #444
+				@media(max-width 570px)
+					font-size 20px
+				&+span
+					font-size 36px
+					color #de011f
+					@media(max-width 570px)
+						font-size 26px
+.wrap
+	position absolute
+	top 75vh
+	left 0
+	right 0
+.public-title
+	padding 7% 0 5%
+	font-size 30px
+	text-align center
+	font-family arial,'黑体'
+	h3
+		color #333
+		letter-spacing 5px
+	small
+		padding-top 10px
+		display block
+		letter-spacing 0px
+		font-size 18px
+		text-transform uppercase
+.public-box-shadow
+	box-shadow 5px 3px 9px rgba(0,0,0,0.2),
+		-5px -3px 9px rgba(0,0,0,0.2)
+.about-project
+	.pb50
+		padding-bottom 50px
+	.pic
+		img
+			display block
+			width 100%
+	.text
+		padding-top 50%
+		text-align center
+		@media(max-width 991px)
+			padding-top 40%
+		@media(max-width 767px)
+			padding-top 10%
+		h4
+			padding 10Px 0 10Px 10%
+			font-size 26px
+			line-height 1
+			text-align left
+			color #de011f
+			background url(../img/hico5.png) left center no-repeat
+		a
+			margin-top 80%
+			display inline-block
+			font-size 18px
+			color #8a8a8a
+			line-height 1
+			padding 8px 30px
+			border 1px solid #8a8a8a
+			border-radius 10px
+			@media(max-width 991px)
+				margin-top 30%
+			@media(max-width 767px)
+				margin-top 10%
+.project-location
+	padding-bottom 3%
+	background #f7f7f7
+	.public-box-shadow
+		.row,
+		.col-xs-12
+			padding 0
+			margin 0
+	.map
+		img
+			display block
+			width 100%
+	.project-info
+		padding-top 10%
+		@media(max-width 767px)
+				padding-top 7%
+		h3
+			width 80%
+			margin-left -3%
+			padding 0 10% 0 13%
+			font-size 28px
+			line-height 76px
+			height 76px
+			color #fff
+			background #de011f
+			box-shadow 3px 3px 5px rgba(0,0,0,0.2)
+		.btn-group
+			padding-top 10%
+			@media(max-width 767px)
+				padding-top 7%
+			a
+				position relative
+				display block
+				height 100px
+				text-align center
+				font-size 18px
+				color #444
+				font-weight bold
+				line-height @height
+				transition 0.3s
+				z-index 1
+				@media(max-width 767px)
+					height 70px
+					line-height @height
+				&:after
+					content ""
+					position absolute
+					right 0
+					top 10px
+					bottom 10px
+					border-left 3px solid transparent
+					transition 0.3s
+				&:hover
+					box-shadow 5px 3px 9px rgba(0,0,0,0.2),
+					-5px -3px 9px rgba(0,0,0,0.2)
+					&:after
+						border-color #de011f
+				span
+					display inline-block
+					padding-left 60px
+					background url(../img/hico9.png) left center no-repeat
+					@media(max-width 767px)
+						background-size auto 80%
+.brand-list
+	padding 3% 0
+	a
+		display block
+		font-size 0
+		height 140px
+		text-align center
+		border 1px solid #eaeaea
+		@media(max-width 767px)
+			height 100px
+		img.max215
+				max-width 215px
+		img.max194
+				max-width 194px
+		i
+		img
+			vertical-align middle
+			display inline-block
+			text-align center
+		i
+			width 0
+			height 100%
+		img
+			width 80%
+		
+.footer
+	padding 3% 0
+	color #fff
+	font-size:12px
+	background url(../img/hico22.png) center top no-repeat
+	.menu
+		h3
+			padding-bottom 10%
+			font-size 16px
+		a
+			display block
+			line-height 2
+	.copy-right
+		padding-top 3%
+		.share
+			@media(max-width 767px)
+				margin-top 5%
+				text-align center
+			a
+				margin 0 3%
+				display inline-block
+				width 36px
+				height 36px
+				border-radius 50%
+				background url() center center no-repeat
+				border 1px solid #fff
+				&:nth-child(1)
+					background-size 22px auto
+				&:nth-child(2)
+					background-size 20px auto
+				&:nth-child(3)
+					background-size 25px auto
+
+
+.mobile-menu-toggle.active .menu-toggle span{                
+	transform: rotate(45deg);
+	transition: transform 0.14s ease 0.14s,
+}
+.mobile-menu-toggle.active .menu-toggle span:after {
+ 	bottom: 0;
+ 	-webkit-transform: rotate(-90deg);
+ 	transform: rotate(-90deg);
+ 	transition: bottom 0.14s ease,-webkit-transform 0.14s ease 0.14s;
+ 	transition: bottom 0.14s ease,transform 0.14s ease 0.14s;
+ 	transition: bottom 0.14s ease,transform 0.14s ease 0.14s,-webkit-transform 0.14s ease 0.14s;
+}
+.mobile-menu-toggle.active .menu-toggle span:before {
+	top: 0;
+ 	transition: top 0.14s ease;
+}
+.mobile-menu-toggle .menu-toggle{
+	width: 14px;
+	height: 10px;
+	display: block;
+	position: relative;
+}
+.mobile-menu-toggle .menu-toggle span{
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 2Px;
+	transition: -webkit-transform 0.14s ease;
+	transition: transform 0.14s ease;
+	transition: transform 0.14s ease, -webkit-transform 0.14s ease
+}
+.mobile-menu-toggle .menu-toggle span:after,.mobile-menu-toggle .menu-toggle span:before{
+	content: '';
+	width: 100%;
+	height: 2Px;
+	background-color: #8e0328;
+	border-radius: 0px;
+	position: absolute;
+}
+.mobile-menu-toggle .menu-toggle span:before {
+	top: -4px;
+}
+.mobile-menu-toggle .menu-toggle span:after {
+	bottom: -4px;
+}
+.mobile-menu-toggle .menu-toggle span:before {
+	transition: top 0.14s ease 0.14s;
+}
+.mobile-menu-toggle .menu-toggle span:after {
+	transition:bottom 0.14s ease 0.14s,-webkit-transform 0.14s ease;
+	transition:transform 0.14s ease,bottom 0.14s ease 0.14s;
+	transition:transform 0.14s ease,bottom 0.14s ease 0.14s,-webkit-transform 0.14s ease;
+}
+
+
+.round
+	width 40px
+	height 40px
+	.line
+		fill #ffffff
+		stroke #459fed
+		stroke-width 1Px
+		cx 25Px
+		cy 25Px
+		r 23Px
+		stroke-dasharray 157
+		stroke-dashoffset 0
+		transition stroke-dashoffset 0.5s 0.3s cubic-bezier(0.5, 0.5, 0.5, 0.5)
+
+
+.public-content
+	overflow hidden
+	width 100%
+	@media(max-width 767px)
+		padding 3% 0
+		.container
+			&>.row
+				white-space nowrap
+				.col-xs-3
+					float none
+					display inline-block
+					min-width 200px
+					width 50vw
+					vertical-align top
+					white-space initial
+				.col-xs-9
+					float none
+					display inline-block
+					width 100%
+					vertical-align top
+					white-space initial
+	.bdl
+		border-left 1px solid #D9D9D9
+		box-sizing border-box
+		margin-bottom -1000px
+		padding-bottom 1000px
+		@media(max-width 991px)
+			border-left none
+	.public-menu
+		padding-top 30%
+		padding-right 15px
+		padding-bottom 30%
+		@media(max-width 991px)
+			padding 10% 0
+		@media(max-width 767px)
+			padding 0
+		.menu-status
+			position relative
+			font-size 0
+			text-align right
+			transform translateX(120px)
+			transition 0.3s
+			z-index 1
+			&.active
+				transform translateX(0)
+				span
+					&:after
+						margin-left 4px
+						transform translate(-50%, -50%) rotate(-45deg)
+					.round .line
+						stroke-dashoffset 157
+						fill transparent
+			span
+				position relative
+				display inline-block
+				&:after
+					content ""
+					position absolute
+					left 50%
+					top 50%
+					transform translate(-50%, -50%)
+					width 15px
+					height 15px
+					border 1Px solid transparent
+					border-left-color #459fed
+					border-top-color #459fed
+					// background #ccc
+					transform translate(-50%, -50%) rotate(135deg)
+					margin-left -4px
+					transition transform 0.3s,margin-left 0.3s;
+		.title
+			h3
+				width 100%
+				font-size 30px
+				color #333
+				text-align left
+			small
+				padding 3% 0 5%
+				width 100%
+				line-height 1
+				font-size 18px
+				color #333
+				text-align right
+				text-transform uppercase
+		.menu
+			padding-right 10%
+			border-top 1px solid #D9D9D9
+			@media(max-width 991px)
+				padding-right 0
+			.item
+				border-bottom 1px solid #D9D9D9
+				&:hover
+				&.active
+					&>.current
+						color #de011f
+						&:after
+							content '>'
+					.menu-child
+						display block
+				.current
+					position relative
+					display block
+					height 50px
+					font-size 16px
+					color #b7b7b7
+					padding-left 20px
+					line-height 50px 
+					cursor pointer
+					box-sizing border-box
+					transition 0.3s color
+					@media(max-width 991px)
+						font-size 20px
+					&:after
+						content ''
+						position absolute
+						right 20px
+						top 0
+						bottom 0
+						font-size 16px
+						line-height 50px
+						color currentColor
+					&:hover
+						color #de011f
+						&:after
+							content '>'
+						
+				.menu-child
+					display none
+					border-top 1px solid #D9D9D9
+					.current
+						padding-left 40px
+						&:after
+							right -20px
+							@media(max-width 991px)
+								right 20px
+						&:hover
+						&.active
+							color #333
+							&:after
+								content '>'
+	.child-page
+		padding-left 15px
+		padding-bottom 8%
+		@media(max-width 991px)
+			padding-left 0
+			padding-bottom 5%
+		.title
+			padding-top 10%
+			h3
+				position relative
+				padding-bottom 20px
+				font-size 20px
+				color #333
+				border-bottom 1px solid #D9D9D9
+				&:after
+					content ""
+					position absolute
+					bottom -2px
+					left 0
+					right 90%
+					border-bottom 3px solid #de001f
+		.content
+			h3
+				padding-top 8%
+				font-size 24px
+				color #333
+				text-align center
+			p
+				font-size 14px
+				color #333
+				line-height 2
+				text-indent 2em
+				@media(max-width 767px)
+					padding-top 5%
+				&+p
+					padding-top 5%
+				&.ti0
+					text-indent 0
+			.about
+				padding 10% 0
+				img
+					display block
+					margin 0 auto
+					max-width 580px
+					width 80%
+			.group
+				img
+					max-width 848px
+			.who-is-we
+				padding 7% 0 0
+				.base-info
+				.pb5
+					padding-bottom 7%
+					.pic
+						img
+							display block
+							width 100%
+							margin 0 auto
+				.file
+					.pic
+						img
+							max-width 400px
+							display block
+							width 100%
+							margin 0 auto
+					h3
+						padding 5% 0 3% 0
+						opacity 0
+						transition 0.3s opacity
+					.swiper-container
+						padding-bottom 20px
+					.swiper-slide-active
+						h3
+							opacity 1
+					.swiper-pagination
+						bottom 0
+						font-size 0
+						span.swiper-pagination-bullet-active
+							background #de001f
+			.clause
+				padding-top 3%
+				.cde011f
+					color #de011f
+				.ti0
+					text-indent 0em
+				.c666
+					color #666
+				h3
+					display inline-block
+					text-align left
+					padding-top 0
+					margin 20px 0 15px
+					padding-right 30Px
+					border-radius 5Px
+					font-size 0
+					white-space nowrap
+					overflow hidden
+					width 100%
+					box-sizing border-box
+					text-overflow ellipsis
+					background #f3f4f3 url(../img/hico33.png) left center/auto 100% no-repeat
+					span
+						display inline-block
+						font-size 14Px
+						color #fff
+						height 33Px
+						text-align center
+						line-height 33Px
+						padding-left 15Px
+						&.id-number
+							width 33Px
+							padding-left 0
+				p
+					padding-top 0
+					font-size 16px
+					color #000
+					line-height 1.5
+				.indexes
+					border-radius 15px
+					overflow hidden
+					background #f4f4f4
+					&.active{
+						position fixed
+					}
+					h3
+						display block
+						padding 0
+						margin 0
+						font-size 18px
+						color #fff
+						border-radius 0px
+						line-height 3
+						background #db5201
+						text-align center
+					a
+						display block
+						padding 10px 0
+						margin 10px 0
+						text-align center
+						font-size 16px
+						color #333333
+						transition 0.3s
+						&:hover
+						&.active
+							color #db5201
+						span
+							display inline-block
+							width 80%
+							position relative
+							white-space nowrap
+							text-overflow ellipsis
+							overflow hidden
+							box-sizing border-box
+							padding-left 10px
+							&:after
+								position absolute
+								left 0
+								top 50%
+								transform translate(0,-50%)
+								content ''
+								border 3px solid transparent
+								border-left-color currentColor
+								@media(min-width 1200px)
+									left 0
+			.case
+				padding 3% 0
+				.case-wrap
+					margin-bottom 12%
+					border 1px solid #E5E5E5
+					border-radius 20px
+					overflow hidden
+					transition 0.3s
+					cursor pointer
+					&:hover
+						box-shadow 5px 3px 9px rgba(0,0,0,0.2),
+						-5px -3px 9px rgba(0,0,0,0.2)
+				.pic
+					img
+						display block
+						width 100%
+				.detalis
+					padding 5%
+					color #333
+					p
+						padding-top 0
+						text-indent 0
+						font-size 20px
+						line-height 1
+						white-space nowrap
+						text-overflow ellipsis
+						overflow hidden
+					.data
+						padding 3% 0
+						line-height 1
+						font-size 14px
+					a
+						margin 3% auto
+						display block
+						width 100px
+						height 36px
+						font-size 14px
+						text-align center
+						line-height 36px
+						border 1px solid #E5E5E5
+						border-radius 10px
+						text-align center
+						transition 0.3s
+						&:hover
+							color #000
+							background #E5E5E5
+			.page-control
+				text-align center
+				font-size 12px
+				color #333
+				line-height 1.5
+				transition 0.3s
+				@media(max-width 767px)
+					font-size 14Px
+				a
+					display inline-block
+					margin 0 1%
+					&:hover
+					&.active
+						color #de011f
+			.sound
+				padding 3% 0
+				.list
+					li
+						padding-bottom 3%
+						@media(max-width 767px)
+							max-width 700px
+							width 100%
+							margin 0 auto
+						&+li
+							padding 3% 0
+							border-top 1px solid #d9d9d9
+						.pic
+							border-radius 5px
+							overflow hidden
+							img
+								display block
+								width 100%
+								margin 0 auto
+						h3
+							font-size 20px
+							color #333
+							line-height 2
+							padding 2% 0
+							text-indent 0
+							text-align left
+							white-space nowrap
+							text-overflow ellipsis
+							overflow hidden
+							@media(max-width 767px)
+								line-height 3
+						p
+							font-size 16px
+							color #666666
+							line-height 1.5
+							text-indent 2em
+							@media(max-width 767px)
+								padding-top 0
+						.timer
+							padding-top 3%
+							padding-bottom 3%
+							color #999
+							@media(max-width 767px)
+								padding-top 0
+								display -webkit-flex
+								display -moz-flex
+								display -ms-flex
+								display -o-flex
+								display flex
+								justify-content flex-end
+								align-items center
+							.date
+								font-size 22px	
+							.yaer
+								font-size 12px
+								@media(max-width 767px)
+									margin 0 10px 0
+							.btn
+								margin-top 10%
+								display block
+								@media(max-width 767px)
+									margin 0 10px 0
+								img
+									display block
+									width 80%
+									max-width 65px
+						.news
+							&.style2
+								a
+									font-size 14px
+									.w80
+										color #c9ad76
+									.w20
+										color #333
+									
+									&.more
+										.w20
+											color #f3b8bd
+							a
+								display block
+								font-size 18px
+								color #666
+								&+a
+									margin-top 2%
+								.w80
+									width 80%
+									overflow hidden
+									white-space nowrap
+									text-overflow ellipsis
+									text-align left
+									@media(max-width 767px)
+										width 70%
+								.w20
+									width 20%
+									text-align right
+									@media(max-width 767px)
+										width 30%
+				.article
+					font-size 14px
+					color #c4c4c4
+					h3
+						padding-top 3%
+						padding-bottom 1%
+						text-align left
+						font-size 20px
+						color #c9ad76
+						line-height 1.5
+					.date
+						padding-bottom 3%
+					p
+						padding 0
+						font-size 14px
+						color #333
+					.pic
+						padding 5% 0
+						img
+							display block
+							max-width 328px
+							margin 0 auto
+							width 100%
+							border-radius 10px
+					.page-control
+						padding 7% 0 5%
+						text-align left
+						font-size 14px
+						color #c9ad76
+						
+			.mission
+				padding-top 5%		
+				h3
+					font-size 22px
+					color #ff500c
+					padding-bottom 8%
+					text-align left
+					@media(max-width 1199px)
+						padding 3% 0
+					@media(max-width 767px)
+						padding 2% 0
+						&+p
+							padding-top 0
+				.sub-title
+					padding 3% 0
+					h4
+						font-size 12px
+						color #666
+						line-height 1
+					small
+						display block
+						font-size 200%
+						padding-top 10px
+						text-transform uppercase
+				.pic
+					img
+						display block
+						width 100%
+						&.op
+							opacity 0.5	
+				.pic-style
+					padding-top 50%
+					position relative
+					img
+						position absolute
+						top 0
+						right 0
+						width 80%
+						&+img
+							right 0
+							bottom 0
+							top auto
+							right auto
+				.item
+					h3
+						color #666
+						@media(min-width 768px)
+							padding 2% 0
+					p
+						padding 0
+				.item.pt4
+					padding-top 4%
+			.contact
+				color #333
+				h3
+					text-align left
+				p
+					font-size 20px
+					text-indent 0
+					padding-top 3%
+					&+p
+						padding-top 3%
+					.red
+						font-size 150%
+						color #de001f
+						line-height 0
+						vertical-align middle
+	
+
+
+.style2
+	.slogan
+		padding 70px 0
+		text-align center
+		background  url(../img/hico61.png) center bottom /61px auto no-repeat
+		.title
+			padding 27px 0 18px
+			margin-bottom 15px
+			font-size 28px
+			color #fff
+			background url(../img/hico60.png) center center/auto 100% no-repeat
+			@media(max-width 767px)
+				padding 22px 0 14px
+		.content
+			font-size 18px
+			color #858585
+			line-height 2
+	.style2-public-title
+		padding 30px 0
+		font-size 32px
+		color #333
+		line-height 2
+		text-align center
+		background linear-gradient(to right,#434343 0%, #434343 100%) 15% center/ 12% 2Px no-repeat,
+		linear-gradient(to right,#434343 0%, #434343 100%) 85% center/ 12% 2Px no-repeat,
+		linear-gradient(to right,#434343 0%, #434343 100%) 75% center/ 6Px 6Px no-repeat,
+		linear-gradient(to right,#434343 0%, #434343 100%) 25% center/ 6Px 6Px no-repeat
+		@media(min-width 768px)
+			background linear-gradient(to right,#434343 0%, #434343 100%) 30% center/ 10% 2Px no-repeat,
+			linear-gradient(to right,#434343 0%, #434343 100%) 70% center/ 10% 2Px no-repeat,
+			linear-gradient(to right,#434343 0%, #434343 100%) 63% center/ 6Px 6Px no-repeat,
+			linear-gradient(to right,#434343 0%, #434343 100%) 37% center/ 6Px 6Px no-repeat
+		span
+			background #fff
+	.important
+		font-size 18px
+		line-height 2
+		background #f6f6f6
+		@media(max-width 991px)
+			margin-top 15px
+		.title
+			margin 0 auto
+			max-width 293px
+			width 100%
+			height 94px
+			text-align center
+			line-height 94px
+			font-size 22px
+			color #333
+			background url(../img/hico62.png) center center/100% 100% no-repeat
+		.content
+			min-height 78px
+		&.first
+			padding-bottom 30px
+			.item
+				padding-top 30px
+				text-align center
+				.name
+					padding-top 10px
+					white-space nowrap
+					text-overflow ellipsis
+					overflow hidden
+			.pic
+				img
+					display block
+					max-width 108px
+					width 100%
+					border-radius 50%
+					margin 0 auto
+		&.second
+		&.third
+			.content
+				padding 30px 0
+		&.third
+			@media(min-width 992px)
+				margin-top 30px
+	.map
+		img
+			display block
+			max-width 900px
+			width 100%
+			margin 0 auto
+	.project-list
+		.item
+			border-radius 5px
+			overflow hidden
+			@media(max-width 767px)
+				margin-top 20px
+				&.mt0
+					margin-top 0
+		.pic
+			img
+				display block
+				width 100%
+		.content
+			background #f6f6f6
+			padding 15px
+			h3
+				padding-bottom 15px
+				font-size 16px
+				color #ec4322
+				line-height 1
+			p
+				font-size 14px
+				color #444
+				line-height 2
+		.more
+			font-size 16px
+			color #999
+			margin 20px 0
+	.news
+		@media(max-width 767px)
+			.item
+				margin-top 25px
+				&.mt0
+					margin-top 0
+		.title
+			margin 3% 0
+			font-size 28px
+			color #333
+			padding-left 60px
+			background linear-gradient(to right,#535353 0%,#535353 100%) left center /10px 100% no-repeat,
+			linear-gradient(to right,#535353 0%,#535353 100%) 20px center /30px 100% no-repeat,
+			linear-gradient(to right,#535353 0%,#535353 100%) right bottom /80% 1Px no-repeat
+			@media(max-width 767px)
+				margin 20px 0
+		.content
+			padding 20px 0 5%
+			.pic
+				border-radius 20px
+				overflow hidden
+				img
+					display block
+					width 100%
+			.text
+				h3
+					padding-top 20px
+					font-size 18px
+					color #333
+				P
+					padding-top 10px
+					font-size 14px
+					color #bfbfbf
+
+.dont-warning-stage
+	.slogan
+		padding-bottom 3%
+		.title
+			padding 5% 0
+			img
+				max-width 180px
+				display block
+				margin 0 auto
+				width 100%
+		.content
+			font-size 20px
+			color #666
+			line-height 2
+			text-align center
+			span
+				line-height 0
+				font-size 24px
+				color #d00
+	.why
+		padding 5% 0
+		background #f6f6f6
+		.title
+			padding-bottom 2%
+			font-size 32px
+			color #333
+			text-align center
+			line-height 1
+		.content
+			p
+				font-size 20px
+				color #666
+				line-height 2
+				text-align center
+				.green
+					font-size 26px
+					color #80c003
+					line-height 0
+				.blue
+					color #0098fe
+					font-size 28px
+					line-height 0
+				&.fz24
+					font-size 24px
+					color #7f5732
+				&.fz26
+					color #ff500c
+					font-size 26px
+			.steps
+				padding 2% 0
+				text-align center
+				font-size 0
+				li
+					display inline-block
+					max-width 100px
+					width 30%
+					&.p0-5
+						padding 0 6.5%
+						margin 0 4.5%
+						background url(../img/hico81.png) left 30%/24px auto no-repeat,
+						 url(../img/hico81.png) right 30%/24px auto no-repeat
+						@media(max-width 767px)
+							padding 0 15px
+							margin 0
+							background none
+					.pic
+						img
+							display block
+							width 100%
+					.text
+						padding-top 10px
+						font-size 24px
+						color #333
+			.tips
+				padding-bottom 30px
+				text-align center
+				div
+					position relative
+					padding 20px 40px
+					display inline-block
+					font-size 24px
+					color #7f5732
+					background #fff
+					line-height 2
+					border-radius 10%
+					&:after
+						content ''
+						position absolute
+						bottom 0
+						left 50%
+						transform translate(-50%,100%)
+						border 15px solid transparent
+						border-left-width 70px
+						border-right-width 70px
+						border-top-color #fff
+					span
+						font-size 28px
+						color #de001f
+						padding 0 10px
+	.public-title-aa
+		.title
+			text-align center
+			h3
+				padding-bottom 2%
+				font-size 32px
+				color #333
+			.sub-title
+				padding-bottom 2%
+				font-size 16px
+				color #858585
+				.orange
+					color #f80
+	.form
+		padding 5% 0
+		.content
+			background url(../img/hico84.png) center 40%/28px auto no-repeat
+			@media(max-width 991px)
+				background none
+			.pic
+				height 240px
+				text-align center
+				font-size 0
+				img
+					display inline-block
+					vertical-align bottom
+					width 100%
+					&.w496
+						max-width 496px
+					&.w438
+						max-width 438px
+				i
+					vertical-align middle
+					display inline-block
+					width 0
+					height 100%
+			.text
+				margin 0 auto
+				width 80%
+				box-sizing border-box
+				padding 40px
+				font-size 18px
+				color #333
+				line-height 2
+				background url(../img/hico85.png) center center/100% auto no-repeat
+				@media(max-width 991px)
+					width 100%
+					background-size 100% 100%
+				.blue
+					color #4b96ff
+				.purple
+					color #a40b5e
+	.good
+		padding 5% 0
+		.content
+			background none
+			.pic
+				height auto
+				img
+					display block
+					width 100%
+	.love
+		padding 5% 0
+		&.bgf6f6f6
+			background #f6f6f6
+		.pic
+			img
+				display block
+				max-width 658px
+				width 100%
+				margin 5% auto 0
+
+
+
+.full-screen
+	&
+	body
+		width 100%
+		height 100%
+	.bg500
+		width 100%
+		height 100%
+		overflow hidden
+		background url() center top no-repeat
+		.tips
+			margin-top 450px
+			text-align center
+			p
+				font-size 27px
+				color #fff
+				line-height 2
+				opacity 0.48
+			a
+				display block
+				margin 15px auto 0
+				width 255px
+				height 62px
+				font-size 28px
+				color #fff
+				line-height 62px
+				text-align center
+				background url(../img/hico90.png) center center/255px 62px no-repeat
+	.wap-bg500
+		width 100%
+		height 100%
+		&.wap404
+			.wap-bg500-wrap
+				.content
+					background none
+					padding-top 0
+					img
+						display block
+						max-width 477px
+						width 80%
+						margin 0 auto
+					p
+						padding-top 20px
+						font-size 26px
+						color #293d52
+						small
+							display block
+							font-size 18px
+							color #293d52
+					a
+						width 147px
+						height 40px
+						font-size 18px
+						color #fff
+						text-align center
+						line-height 40px
+						background #2aaae3
+						border-radius 20px
+		.wap-bg500-wrap
+			width 100%
+			height 100%
+			display -webkit-flex
+			display -moz-flex
+			display -ms-flex
+			display -o-flex
+			display flex
+			align-items center
+			justify-content center
+			.content
+				padding-top 300px
+				width 100%
+				text-align center
+				background url(../img/hico91.png) center top/100% auto no-repeat
+				p
+					color #333
+				a
+					display block
+					margin 50px auto 0
+					line-height 50px
+					width 155px
+					height 50px
+					font-size 24px
+					color #23acf6
+					background url(../img/hico90.png) center center/100% 100% no-repeat
+		
+
+
+
+.health-content
+	&-title
+		padding-top 80px
+		h2
+			height 72px
+			font-size 28px
+			color #fff
+			line-height 72px
+			text-align center
+			background url('../img/health-rectangle.png') center center no-repeat
+		small
+			padding-top 34px
+			display block
+			font-size 18px
+			color #858585
+			text-align center
+	.health-mission
+		position relative
+		margin-top 40px
+		border 1px solid #5dba2b
+		min-height 470px
+		@media(max-width 992px)
+			margin-bottom 40px
+			min-height auto
+		&:after
+			content ""
+			position absolute
+			bottom -1px
+			right 0
+			width 110px
+			border-bottom 1px solid #fff
+		&:before
+			content ""
+			position absolute
+			right -1px
+			bottom 0
+			height 110px
+			border-right 1px solid #fff
+		h3
+			position relative
+			margin-top -25px
+			margin-left -22px
+			max-width 323px
+			min-height 162px
+			padding-top 50px
+			font-size 22px
+			box-sizing border-box
+			color #5dba2b
+			line-height 1.5
+			text-align left
+			padding-left 26%
+			border 1px solid #5dba2b
+			small
+				display block
+				font-size 20px
+			&:after
+				content ""
+				position absolute
+				top -1px
+				left 0
+				width 70px
+				border-bottom 1px solid #fff
+			&:before
+				content ""
+				position absolute
+				left -1px
+				top 0
+				height 70px
+				border-right 1px solid #fff
+		p
+			padding-top 70px
+			width 90%
+			margin 0 auto
+			font-size 18px
+			left 2px
+			color #666
+			@media(max-width 992px)
+				padding-bottom 70px
+	.introduction
+		.video
+			.item
+				border-radius 5px
+				overflow hidden
+				max-width 500px
+				margin 0 auto
+				background #000
+				.pic
+					img
+						display block
+						width 100%
+						height 190px
+						@media(max-width 992px)
+							height auto
+					video
+						display block
+						width 100%
+						height 200px
+				h3
+					font-size 18px
+					color #666
+					line-height 53px
+					text-align center
+					background #f6f6f6
+		.news
+			margin-top 15px
+			padding 15px 30px 30px 30px
+			background #f6f6f6
+			h3
+				position relative
+				font-size 22px
+				color #5dba2b
+				padding-left 15px
+				line-height 58px
+				border-bottom 1px solid #5dba2b
+				&:after
+					content ""
+					position absolute
+					left 0
+					top 20px
+					bottom 20px
+					border-left 3px solid #5dba2b
+			.item
+				padding-top 30px
+				a
+					display block
+					width 100%
+					font-size 18px
+					color #666
+					line-height 1
+					white-space nowrap
+					text-overflow ellipsis
+					overflow hidden
+					&:hover
+						color #5dba2b
+	.health-list
+		padding-bottom 40px
+		@media(max-width 992px)
+			padding-bottom 0
+		.col-xs-12
+			padding 0
+			@media(max-width 992px)
+				padding-bottom 30px
+			&.red
+				.top-bar
+					margin-left 5%
+					background #c93917
+					@media(max-width 992px)
+						margin-left 0
+				.year
+				h3
+					color #c93917
+				h3
+				p
+					background url('../img/health-roundpng.png') 12px center no-repeat
+			&.orange
+				.top-bar
+					background #e99001
+					&:after
+					&:before
+						color #e99001
+				.year
+				h3
+					color #e99001
+			&.green
+				.top-bar
+					margin-right 5%
+					background #5dba2b
+					@media(max-width 992px)
+						margin-right 0
+					&:after
+					&:before
+						display none
+				.year
+				h3
+					color #5dba2b
+		.top-bar
+			position relative
+			height 8px
+			background #c93917
+			&:after
+				content ""
+				position absolute
+				top 0
+				right 0
+				height 150px
+				color #c93917
+				border-left 1px solid currentColor
+				@media(max-width 992px)
+					display none
+			&:before
+				content ""
+				position absolute
+				top 145px
+				right -5px
+				border 5px solid transparent
+				border-top-color currentColor
+				color #c93917
+				transform rotate(45deg)
+				@media(max-width 992px)
+					display none
+		.year
+			padding-right 20px
+			font-size 52px
+			color #c93917
+			line-height 80px
+			text-align right
+		h3
+		p
+			padding-left 40px
+			line-height 2
+		h3
+			font-size 22px
+			color #c93917
+		p
+			font-size 16px
+			color #333
+	.health-map
+		padding 40px 0
+		background #f6f6f6
+		.pic
+			max-width 910px
+			width 90%
+			margin 0 auto
+			img
+				display block
+				width 100%
+	.health-book
+		padding-bottom 60px
+		overflow hidden
+		background linear-gradient(to right,#5dba2b 0%,#5dba2b 100%) left top /80% 1px no-repeat,
+		linear-gradient(to bottom,#5dba2b 0%,#5dba2b 100%) left top /1px 80% no-repeat,
+		linear-gradient(to right,#5dba2b 0%,#5dba2b 100%) right bottom /80% 1px no-repeat,
+		linear-gradient(to top,#5dba2b 0%,#5dba2b 100%) right bottom /1px 10% no-repeat,
+		linear-gradient(to top,#5dba2b 0%,#5dba2b 100%) right 30%/1px 60% no-repeat
+		h3
+			margin 30px 0 20px
+			width 247px
+			height 60px
+			font-size 28px
+			color #fff
+			line-height 60px
+			text-align center
+			background #5dba2b
+		p
+			max-width 95%
+			margin 0 auto
+			padding-bottom 30px
+			font-size 16px
+			color #333
+			text-align center
+			line-height 1.5
+			text-align center
+			text-indent 3em
+		.book-container
+			max-width 1040px
+			width 95%
+			margin 0 auto
+			height 400px
+			overflow hidden
+			#flipbook
+				width 100%
+				height 100%
+			img
+				display block
+				width 100%
+	.health-rural
+		h3
+			width 209px
+			height 122px
+			padding 35px 31px 0 0
+			float right
+			text-align right
+			font-size 22px
+			color #5dba2b
+			line-height 1
+			box-sizing border-box
+			background linear-gradient(to right,#5dba2b 0%,#5dba2b 100%) right top /80% 1px no-repeat,
+			linear-gradient(to bottom,#5dba2b 0%,#5dba2b 100%) left bottom /1px 80% no-repeat,
+			linear-gradient(to right,#5dba2b 0%,#5dba2b 100%) right bottom /100% 1px no-repeat,
+			linear-gradient(to top,#5dba2b 0%,#5dba2b 100%) right bottom /1px 100% no-repeat
+		p
+			padding 25px 0 20px
+			font-size 18px
+			color #666
+			line-height 2
+			text-indent 2em
+		h4
+			position relative
+			padding 20px 0 20px 15px
+			font-size 22px
+			color #5dba2b
+			line-height 1
+			&:after
+				content ""
+				position absolute
+				left 0
+				top 25px
+				bottom 25px
+				border-left 1px solid #5dba2b
+		.video
+			.pic
+				display block
+				width 45%
+				background #000
+				img
+					display block
+					width 100%
+				video
+					display block
+					width 100%
+					height 195px
+	.health-rural-list
+		.big
+			position relative
+			@media(max-width 992px)
+				padding-top 30px
+			img
+				width 100%
+			.tips
+				position absolute
+				bottom 0
+				left 15px
+				font-size 18px
+				color #fffefe
+				line-height 2
+		.swiper-container
+			padding-top 20px
+		.swiper-slide
+			img
+				display block
+				width 100%
+				border-radius 5px
+.pb80
+	padding-bottom 80px
+			
+				
+		
