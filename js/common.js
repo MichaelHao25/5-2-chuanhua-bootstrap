@@ -105,7 +105,17 @@
 			autoplayDisableOnInteraction: false,
 			paginationClickable: true,
 		})
+		var details = new Swiper('.details-main .swiper-container', {
+			// nextButton: '.swiper-button-next',
+			// prevButton: '.swiper-button-prev',
+			// pagination: '.swiper-pagination',
+			// autoplay: 3000,
+			// autoplayDisableOnInteraction: false,
+			// paginationClickable: true,
+		})
 
+
+		
 
 
 		$('.public-content .child-page .content .clause .indexes a').on('click', function() {
